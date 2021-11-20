@@ -22,6 +22,7 @@ type Wish struct {
 	Owner      string `json:"Owner" db:"owner"`
 	Status     string `json:"Status" db:"status"`
 	Desc       string `json:"Desc" db:"description"`
+	Title      string `json:"Title" db:"title"`
 }
 
 var errorLogger = log.New(os.Stderr, "ERROR ", log.Llongfile)
@@ -107,13 +108,15 @@ func upsert(req events.APIGatewayV2HTTPRequest) (events.APIGatewayProxyResponse,
 			calendar_id,
 			owner,
 			status,
-			description
+			description,
+			title
 		) values (
 			:id,
 			:calendar_id,
 			:owner,
 			:status,
-			:description
+			:description,
+			:title
 		)
 	`, &rs)
 		if err != nil {
