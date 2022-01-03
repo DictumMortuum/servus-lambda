@@ -17,12 +17,13 @@ var (
 )
 
 type Wish struct {
-	Id         int    `json:"Id" db:"id"`
-	CalendarId int    `json:"CalendarId" db:"calendar_id"`
-	Owner      string `json:"Owner" db:"owner"`
-	Status     string `json:"Status" db:"status"`
-	Desc       string `json:"Desc" db:"description"`
-	Title      string `json:"Title" db:"title"`
+	Id              int    `json:"Id" db:"id"`
+	CalendarId      int    `json:"CalendarId" db:"calendar_id"`
+	Owner           string `json:"Owner" db:"owner"`
+	Status          string `json:"Status" db:"status"`
+	Desc            string `json:"Desc" db:"description"`
+	Title           string `json:"Title" db:"title"`
+	NextcloudStatus string `json:"NextcloudStatus" db:"nextcloud_status"`
 }
 
 var errorLogger = log.New(os.Stderr, "ERROR ", log.Llongfile)
